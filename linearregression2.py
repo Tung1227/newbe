@@ -8,7 +8,7 @@ def GradientDissent(X, Y, theta, alpha, num_iters):
         temp = (alpha / m) * np.matmul(X.T, (hx - Y))
         c2 = Cost(theta - temp, X, Y)
  
-        if c1 > c2:
+        if c1 > c2: 
             c1 = c2
             theta = theta - temp
         #print (c1, c2, theta)
@@ -26,10 +26,10 @@ if __name__ == "__main__":
     t = X
     X = np.hstack((np.matrix(np.ones(m).reshape(m, 1)), t))
 
-    theta = np.matrix(np.ones(2).reshape(2, 1))
+    theta = np.array([[-26],[27]])
     theta = GradientDissent(X, Y, theta, 0.000001, 100)
     Cost(theta, X, Y)
     print(theta)
     print(Cost(theta, X, Y))
-    predict1 = [1,(164/np.max(X))] @ theta #normalising the input value, 1 is for intercept term so not need to normalise
+    predict1 = [1,20] @ theta #normalising the input value, 1 is for intercept term so not need to normalise
     print(predict1)
