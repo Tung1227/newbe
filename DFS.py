@@ -88,15 +88,15 @@ if __name__ == "__main__":
             ("S", "B"),
             ("S", "C"),
             ("A", "D"),
-            ("B", "G"),
+            ("B", "D"),
             ("B", "E"),
             ("C", "E"),
             ("D", "F"),
             ("E", "H"),
-            ("F", "E"),
-            ("H", "G"),
             ("F", "G"),
+            ("H", "G"),
+            ("B", "G"),
         ]
     )
-    result = Depth_First_Search(G,"S", "D")
+    result = Depth_First_Search(G,"S", "G")
     print(result)

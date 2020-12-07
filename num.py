@@ -1,5 +1,10 @@
 import numpy as np
 
+def findB(x,y):
+    transposeX1 = np.matrix.transpose(x)  
+    xTx= transposeX1.dot(x)
+    B = (((np.linalg.inv(xTx)).dot(transposeX1)).dot(y))
+    return B
 def GradientDissent(X, Y, theta, alpha, num_iters):
     m = np.size(Y)
     hx = np.matmul(X, theta)
@@ -15,7 +20,6 @@ def GradientDissent(X, Y, theta, alpha, num_iters):
     return theta
 
 def computecost(x,y,theta):
-    
     a = 1/(2*m)
     b = np.sum(((x@theta)-y)**2)
     j = (a)*(b)
